@@ -23,63 +23,74 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // html + api Routes
 // =============================================================
 
-//Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/home.html"));
+
+
+app.use('/api/friends', require('./app/routing/apiRoutes'));
+app.use('/', require('./app/routing/htmlRoutes'));
+
+app.get('/', function(req, res) {
+  res.send('Hello form root route.');
 });
 
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/survey.html"));
-});
 
-app.get('/api/friends', function(req, res){
-  res.json(friendsArray);
-});
 
-app.post('/api/friends', function(req, res){
 
-	var friendName = req.body.name;
-	var friendPhoto = req.body.photo;
-	var friendScores = req.body.scores;
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "app/public/home.html"));
+// });
+
+// app.get("/survey", function(req, res) {
+//   res.sendFile(path.join(__dirname, "app/public/survey.html"));
+// });
+
+// app.get('/api/friends', function(req, res){
+//   res.json(friendsArray);
+// });
+
+// app.post('/api/friends', function(req, res){
+
+// 	var friendName = req.body.name;
+// 	var friendPhoto = req.body.photo;
+// 	var friendScores = req.body.scores;
 	
-	var newFriend = {
-		name : friendName,
-		scores : friendScores,
-		photo : friendPhoto
-	}
+// 	var newFriend = {
+// 		name : friendName,
+// 		scores : friendScores,
+// 		photo : friendPhoto
+// 	}
 
-	// friendsArray.push(newFriend)
+// 	// friendsArray.push(newFriend)
 	
-	// res.json(newFriend)	
+// 	// res.json(newFriend)	
 
-	function findMatch(data){
-    var lowestDiff = 100;
-    var match;
+// 	function findMatch(data){
+//     var lowestDiff = 100;
+//     var match;
     
-    for (var i = 0; i < friendsArray.length; i++){
+//     for (var i = 0; i < friendsArray.length; i++){
      
-        var currentDiff = 0;
+//         var currentDiff = 0;
        
-        for (var j = 0; j < newFriend.scores.length; j++){
-       //+= means to take the current value and add whatevers to the left of =...
-       //math. ab-->give absoulute number so i can do (ex. 1-2), and get a positive answer
-       //parseInt-->takes string makes it an integer
-            currentDiff+=Math.abs(parseInt(newFriend.scores[j]) - parseInt(friendsArray[i].scores[j]));
-        }
-        // console.log(currentDiff);
-        //compare current diff to the lowest diff, if it's lower, set that as the new match.
-        if (currentDiff <= lowestDiff){
-            lowestDiff = currentDiff;
-            match = friendsArray[i];
-            console.log(match) 
+//         for (var j = 0; j < newFriend.scores.length; j++){
+//        //+= means to take the current value and add whatevers to the left of =...
+//        //math. ab-->give absoulute number so i can do (ex. 1-2), and get a positive answer
+//        //parseInt-->takes string makes it an integer
+//             currentDiff+=Math.abs(parseInt(newFriend.scores[j]) - parseInt(friendsArray[i].scores[j]));
+//         }
+//         // console.log(currentDiff);
+//         //compare current diff to the lowest diff, if it's lower, set that as the new match.
+//         if (currentDiff <= lowestDiff){
+//             lowestDiff = currentDiff;
+//             match = friendsArray[i];
+//             console.log(match) 
 
-        }
-    }
-    return match;
-      // res.json(match);
-}
-findMatch();
-});
+//         }
+//     }
+//     return match;
+//       // res.json(match);
+// }
+// findMatch();
+// });
 
  
 

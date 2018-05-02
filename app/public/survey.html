@@ -14,7 +14,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
-<style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+	<style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+
+</head>
 <body data-gclp-initialized="true" data-gistbox-initialized="true">
 
 	<div class="container">
@@ -145,12 +147,17 @@
 
 		<!-- Submit Button -->
 		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
- Submit</button>
+		 Submit</button>
+		 
+		 <!--Button to test if modal will show up at all-->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resultsModal">
+			launch results modal
+		</button>
 
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
-		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+		        <p><a href="/api/friends/list">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -194,15 +201,6 @@
     // Capture the form inputs 
     $("#submit").on("click", function(){
 
-
-   // Clear the form when submitting
-          // $("#reserve-name").val("");
-          // $("#reserve-phone").val("");
-          // $("#reserve-email").val("");
-          // $("#reserve-unique-id").val("");
-
-
-
     	// Form validation
     	function validateForm() {
 		  var isValid = true;
@@ -230,7 +228,11 @@
 	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
 	    	}
 
-
+			// Clear the form when submitting
+			$("#name").val("");
+			$("#photo").val("");
+			$("#q1").val("");
+			$("#q2").val("");
 
 
 	    	// // Grab the URL of the website
@@ -265,11 +267,7 @@
 
     });
 
-   // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+
   </script>
 
 
