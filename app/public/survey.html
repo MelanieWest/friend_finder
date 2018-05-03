@@ -238,19 +238,18 @@
 	    	// // Grab the URL of the website
 	    	var currentURL = window.location.origin;
 
-	    	// AJAX post the data to the friends API. 
+	    	// AJAX post the user data to the friends API and receive a match (data) 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
-	    				console.log("here:" + data);
-	    		//   for (var i = 0; i < data.length; i++) {
-				// Put results into modal
-				//also try #matchName, #matchImg?
-                $("#modal-body").append("<h2>"+data.name+"</h2>");
-                $("#modal-body").append("<img src="+data.photo+"></img>");
- //           };
-            	 // Show the modal with the best match 
-            $("#resultsModal").modal('toggle');
+	    		//console.log("survey response:" + data.name);		//this never logs
+	      for (var i = 0; i < data.length; i++) {
+				//Put results into modal (why are we using a loop?)
+                $("#modal-body").append("<h2>"+data[i].name+"</h2>");
+                $("#modal-body").append("<img src="+data[i].photo+"></img>");
+          };
+            	// Show the modal with the best match 
+           $("#resultsModal").modal('toggle');
 
-	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+	    		// // Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		// $("#matchName").text(data.name);
 	    		// $('#matchImg').attr("src", data.photo);
 

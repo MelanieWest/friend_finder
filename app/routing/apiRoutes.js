@@ -13,8 +13,11 @@ apifriends.get('/list', function (req, res) {
 
 
 apifriends.post('/', function (req, res) {
-  res.send('Hello from API friends root route.');
+  //res.send('Hello from API friends root route.');
 
+  //take UserData and find a match.  Return the match to the 'submit' function that called it,
+  //where it will be stuffed into the modal
+  
   var friendName = req.body.name;
   var friendPhoto = req.body.photo;
   var friendScores = req.body.scores;
@@ -48,15 +51,14 @@ apifriends.post('/', function (req, res) {
       if (currentDiff <= lowestDiff) {
         lowestDiff = currentDiff;
         match = friendsArray[i];
-        console.log(match)
+        //console.log(match);   //this never logs
       }
     }
     return match;
+ 
     res.json(match);
   }
   findMatch();
-  // $("#matchName").txt=match.name;
-  // $("#matchImg").href =match.photo;
 
 });
 
