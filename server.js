@@ -20,18 +20,12 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // =============================================================
 
 
-
 app.use('/api/friends', require('./app/routing/apiRoutes'));
 app.use('/', require('./app/routing/htmlRoutes'));
 
 app.get('/', function(req, res) {
   res.send('Hello form root route.');
 });
-
-
-
-
-
 
 
 //lets the server recongnize the js files
@@ -42,9 +36,4 @@ app.use(express.static('app'));
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
-
-
-
-
-
 

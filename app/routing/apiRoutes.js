@@ -10,10 +10,6 @@ apifriends.get('/list', function (req, res) {
   res.json(friendsArray);
 });
 
-// apifriends.get('/list', function(req, res) {
-//   res.send('List of friends.');
-// });
-
 
 
 apifriends.post('/', function (req, res) {
@@ -29,9 +25,9 @@ apifriends.post('/', function (req, res) {
     photo: friendPhoto
   }
 
-  // friendsArray.push(newFriend)
+  friendsArray.push(newFriend)
 
-  // res.json(newFriend)	
+  //res.json(newFriend)	
 
   function findMatch(data) {
     var lowestDiff = 100;
@@ -53,14 +49,14 @@ apifriends.post('/', function (req, res) {
         lowestDiff = currentDiff;
         match = friendsArray[i];
         console.log(match)
-
       }
     }
     return match;
     res.json(match);
   }
   findMatch();
-
+  // $("#matchName").txt=match.name;
+  // $("#matchImg").href =match.photo;
 
 });
 

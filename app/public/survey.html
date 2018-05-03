@@ -241,11 +241,12 @@
 	    	// AJAX post the data to the friends API. 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
 	    				console.log("here:" + data);
-	    		  for (var i = 0; i < data.length; i++) {
-                // Put results into modal
-                $("#modal-body").append("<h2>"+data[i].name+"</h2>");
-                $("#modal-body").append("<img src="+data[i].photo+"></img>");
-            };
+	    		//   for (var i = 0; i < data.length; i++) {
+				// Put results into modal
+				//also try #matchName, #matchImg?
+                $("#modal-body").append("<h2>"+data.name+"</h2>");
+                $("#modal-body").append("<img src="+data.photo+"></img>");
+ //           };
             	 // Show the modal with the best match 
             $("#resultsModal").modal('toggle');
 
