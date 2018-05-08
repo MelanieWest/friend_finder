@@ -54,9 +54,10 @@ apifriends.post('/', function (req, res) {
         //console.log(match);   //this never logs
       }
     }
+    res.json(match);
     return match;
  
-    res.json(match);
+
   }
   findMatch();
 

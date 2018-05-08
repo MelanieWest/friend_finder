@@ -242,7 +242,7 @@
 	    	$.post(currentURL + "/api/friends", userData, function(data){
 	    		//console.log("survey response:" + data.name);		//this never logs
 	      for (var i = 0; i < data.length; i++) {
-				//Put results into modal (why are we using a loop?)
+				//Put results into modal (why are we using a loop?  only one match should return )
                 $("#modal-body").append("<h2>"+data[i].name+"</h2>");
                 $("#modal-body").append("<img src="+data[i].photo+"></img>");
           };
