@@ -14,14 +14,47 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
-	<style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+	<style type="text/css">
+	
+	.fancybox-margin{margin-right:0px;}
+
+    header {
+position: fixed;
+top: 0px;
+left: 0px;
+height: 30px;
+width: 100%;
+font-size: 24px;
+text-align: center;
+color: darkgreen;
+background-color: khaki;
+}
+
+body {
+background-color: powderblue;
+}
+
+img {
+height: 140px;
+width: 140px; 
+margin: 5px; 
+}
+
+</style>
 
 </head>
 <body data-gclp-initialized="true" data-gistbox-initialized="true">
 
 	<div class="container">
+		<div class = "row justify-content-md-center">
+            <div class = "col-12">
+            <header> Hundred Acre Wood Personality Test </header>
+            </div>               
+		</div>
+	<br>
+	<br>
 
-		<h2>Survey Questions</h2>
+		<h2 style="top:20px">Survey Questions</h2>
 		<hr>
 
 		<h3><strong>About You</strong></h3>
@@ -141,7 +174,10 @@
 			launch results modal
 		</button>
 
+	
+		
 		<hr>
+		</div>
 	    <footer class="footer">
 	      <div class="container">
 		        <p><a href="/api/friends/list">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
@@ -258,4 +294,8 @@
   </script>
 
 
-<form id="gclp-frame-form" target="gclp-frame" method="post" style="display: none;"></form><div id="window-resizer-tooltip"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
+<form id="gclp-frame-form" target="gclp-frame" method="post" style="display: none;"></form>
+<!-- <div id="window-resizer-tooltip"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span>
+</div> -->
+</body>
+</html>
