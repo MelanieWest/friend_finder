@@ -30,8 +30,7 @@ apifriends.post('/', function (req, res) {
   }
 
   //if I push 'newFriend' into the array now, they will match with themselves..
-
-  //res.json(newFriend)	
+  //so wait until the end for that
 
   function findMatch(data) {
     var lowestDiff = 100;
@@ -59,7 +58,6 @@ apifriends.post('/', function (req, res) {
     console.log(match);
     res.json(match);
     return match;
- 
 
   }
   findMatch();

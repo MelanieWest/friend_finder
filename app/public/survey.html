@@ -141,30 +141,6 @@ margin: 5px;
 			<option value="5">5 (Strongly Agree)</option>
 		</select>               
 
-		<!-- <h3><strong>Question 9</strong></h3>
-		<h4>Do you enjoy lil Wayne?</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q9" >
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-
-		<h3><strong>Question 10</strong></h3>
-		<h4>How do you feel about vinyls?</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q10" >
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-		<br>
-		<br> -->
-
 		<!-- Submit Button -->
 		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
 		 Submit</button>
@@ -209,7 +185,8 @@ margin: 5px;
 
   <script type="text/javascript">
 
-  	// Chosen CSS
+	  // Chosen CSS - search threshold should match number of questions
+	  
     var config = {
       '.chosen-select'           : {},
       '.chosen-select-deselect'  : {allow_single_deselect:true},
@@ -263,14 +240,7 @@ margin: 5px;
 
 	    	// AJAX post the user data to the friends API and receive a match (data) 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
-	    		//console.log("survey response:" + data.name);		//this never logs
-//	      for (var i = 0; i < data.length; i++) {
-				//Put results into modal (why are we using a loop?  only one match should return )
-               		 //$("#modal-body").append("<h2>"+data.name+"</h2>");
-                	 //$("#modal-body").append("<img src="+data.image+"></img>");
-//          };
-            	// Show the modal with the best match 
-          		 	// $("#resultsModal").modal('toggle');
+	    		//console.log("survey response:" + data.name);
 
 	    		// // Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		 $("#matchName").text(data.name);
