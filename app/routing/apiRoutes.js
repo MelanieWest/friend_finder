@@ -2,7 +2,8 @@ var express = require('express');
 var apifriends = express.Router();
 
 //data from other files
-var friendsArray = require('../data/friends.js')
+//var friendsArray = require('../data/friends.js')
+var friendsArray = require('../data/characters.js')
 
 //access the data and display
 

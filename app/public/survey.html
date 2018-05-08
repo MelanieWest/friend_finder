@@ -121,7 +121,7 @@
             <option value="5">5 (Strongly Agree)</option>
       	</select>
 
-		<h3><strong>Question 9</strong></h3>
+		<!-- <h3><strong>Question 9</strong></h3>
 		<h4>Do you enjoy lil Wayne?</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q9" >
 	 		<option value=""></option>
@@ -143,7 +143,7 @@
             <option value="5">5 (Strongly Agree)</option>
       	</select>
 		<br>
-		<br>
+		<br> -->
 
 		<!-- Submit Button -->
 		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
@@ -190,7 +190,7 @@
     var config = {
       '.chosen-select'           : {},
       '.chosen-select-deselect'  : {allow_single_deselect:true},
-      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-single' : {disable_search_threshold:8},
       '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
       '.chosen-select-width'     : {width:"95%"}
     }
@@ -225,7 +225,7 @@
 	    	var userData = {
 	    		name: $("#name").val(),
 	    		photo: $("#photo").val(),
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val() ]
 	    	}
 
 			// Clear the form when submitting
