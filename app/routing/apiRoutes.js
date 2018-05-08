@@ -28,7 +28,7 @@ apifriends.post('/', function (req, res) {
     photo: friendPhoto
   }
 
-  friendsArray.push(newFriend)
+  //if I push 'newFriend' into the array now, they will match with themselves..
 
   //res.json(newFriend)	
 
@@ -54,6 +54,9 @@ apifriends.post('/', function (req, res) {
         //console.log(match);   //this never logs
       }
     }
+    
+    friendsArray.push(newFriend)
+    console.log(match);
     res.json(match);
     return match;
  
