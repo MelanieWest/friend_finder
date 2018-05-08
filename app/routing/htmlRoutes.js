@@ -10,5 +10,10 @@ apipublic.get("/", function(req, res) {
 apipublic.get("/survey", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
+
+apipublic.get("/grid", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 module.exports = apipublic;
 
