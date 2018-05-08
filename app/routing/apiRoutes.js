@@ -19,13 +19,13 @@ apifriends.post('/', function (req, res) {
   //where it will be stuffed into the modal
   
   var friendName = req.body.name;
-  var friendPhoto = req.body.photo;
+  var friendPhoto = req.body.image;
   var friendScores = req.body.scores;
 
   var newFriend = {
     name: friendName,
     scores: friendScores,
-    photo: friendPhoto
+    image: friendPhoto
   }
 
   //if I push 'newFriend' into the array now, they will match with themselves..
@@ -51,7 +51,6 @@ apifriends.post('/', function (req, res) {
       if (currentDiff <= lowestDiff) {
         lowestDiff = currentDiff;
         match = friendsArray[i];
-        //console.log(match);   //this never logs
       }
     }
     
