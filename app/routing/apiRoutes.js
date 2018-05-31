@@ -15,7 +15,7 @@ apifriends.get('/list', function (req, res) {
 
 apifriends.post('/', function (req, res) {
   //res.send('Hello from API friends root route.');
-
+  console.log(req);
   //take UserData and find a match.  Return the match to the 'submit' function that called it,
   //where it will be stuffed into the modal
   
